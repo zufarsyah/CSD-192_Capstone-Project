@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             var email = findViewById<EditText>(R.id.editTextEmail)
             var password = findViewById<EditText>(R.id.editTextPassword)
 
-            if (email.text.toString().equals("admin") && password.text.toString().equals("123")) {
+            if (email.text.toString().equals("a") && password.text.toString().equals("1")) {
                 val moveIntent = Intent(this@MainActivity, HomeActivity::class.java)
                 startActivity(moveIntent)
                 Toast.makeText(applicationContext, "Login Sukses", Toast.LENGTH_SHORT).show()
