@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.findbinar.Home
+package com.dicoding.picodiploma.findbinar.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.dicoding.picodiploma.findbinar.Home.ListWebinarAdapter.*
+import com.dicoding.picodiploma.findbinar.adapter.ListWebinarAdapter.*
+import com.dicoding.picodiploma.findbinar.data.Webinar
 import com.dicoding.picodiploma.findbinar.R
 
 class ListWebinarAdapter(private val listWebinar: ArrayList<Webinar>) : RecyclerView.Adapter<ListViewHolder>() {

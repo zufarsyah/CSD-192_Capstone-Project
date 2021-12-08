@@ -4,17 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.dicoding.picodiploma.findbinar.Home.GridPhotoAdapter
-import com.dicoding.picodiploma.findbinar.Home.ListWebinarAdapter
-import com.dicoding.picodiploma.findbinar.Home.Webinar
-import com.dicoding.picodiploma.findbinar.R
+import com.dicoding.picodiploma.findbinar.home.GridPhotoAdapter
+import com.dicoding.picodiploma.findbinar.data.Webinar
 import com.dicoding.picodiploma.findbinar.databinding.FragmentHomeBinding
+import com.dicoding.picodiploma.findbinar.R
 
 class HomeFragment : Fragment() {
 
@@ -63,14 +60,18 @@ class HomeFragment : Fragment() {
             val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
             val listBinar = ArrayList<Webinar>()
             for (i in dataTitle.indices) {
-                val webinar = Webinar(dataTitle[i],dataUniversity[i], dataPhoto.getResourceId(i, -1))
+                val webinar = com.dicoding.picodiploma.findbinar.data.Webinar(
+                    dataTitle[i],
+                    dataUniversity[i],
+                    dataPhoto.getResourceId(i, -1)
+                )
                 listBinar.add(webinar)
             }
             return listBinar
         }
     private fun showRecyclerList() {
         rvWebinar.layoutManager = LinearLayoutManager(activity)
-        val listWebinarAdapter = ListWebinarAdapter(list)
+        val listWebinarAdapter = com.dicoding.picodiploma.findbinar.adapter.ListWebinarAdapter(list)
         rvWebinar.adapter = listWebinarAdapter
     }
     private fun showRecyclerGrid() {

@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.findbinar.Home
+package com.dicoding.picodiploma.findbinar.data
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

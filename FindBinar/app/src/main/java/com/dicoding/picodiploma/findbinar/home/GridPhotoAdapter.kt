@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.findbinar.Home
+package com.dicoding.picodiploma.findbinar.home
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.dicoding.picodiploma.findbinar.data.Webinar
 import com.dicoding.picodiploma.findbinar.R
 
 class GridPhotoAdapter(val listWebinar : ArrayList<Webinar>): RecyclerView.Adapter<GridPhotoAdapter.GridViewHolder>() {

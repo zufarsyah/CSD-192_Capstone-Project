@@ -11,7 +11,7 @@
     <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_search">Search</string>
     <string name="title_notifications">Notifications</string>
 
     //data test
@@ -43,5 +43,18 @@
         <item>@drawable/f</item>
     </integer-array>
 
+    <string-array name="data_topik">
+        <item>Teknologi</item>
+        <item>Perempuan</item>
+        <item>Industri Kreatif</item>
+        <item>Finansial</item>
+    </string-array>
+
+    <integer-array name="icon_topik">
+        <item>@drawable/topik1</item>
+        <item>@drawable/topik2</item>
+        <item>@drawable/topik3</item>
+        <item>@drawable/topik4</item>
+    </integer-array>
 
 </resources>

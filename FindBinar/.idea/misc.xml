@@ -15,10 +15,16 @@
         <entry key="..\:/Rabil/Android/Capstone/FindBinar/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Rabil/Android/Capstone/FindBinar/app/src/main/res/layout/layout_login.xml" value="0.2957427536231884" />
         <entry key="..\:/Rabil/Android/Capstone/FindBinar/app/src/main/res/layout/layout_register.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/Spectre/Documents/GitHub/CSD-192_Capstone-Project/FindBinar/app/src/main/res/drawable/ic_book.xml" value="0.3828125" />
+        <entry key="..\:/Users/Spectre/Documents/GitHub/CSD-192_Capstone-Project/FindBinar/app/src/main/res/drawable/login_shape_bk2.xml" value="0.3828125" />
         <entry key="..\:/Users/Spectre/Documents/GitHub/CSD-192_Capstone-Project/FindBinar/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Spectre/Documents/GitHub/CSD-192_Capstone-Project/FindBinar/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Spectre/Documents/GitHub/CSD-192_Capstone-Project/FindBinar/app/src/main/res/layout/fragment_dashboard.xml" value="0.3532608695652174" />
         <entry key="..\:/Users/Spectre/Documents/GitHub/CSD-192_Capstone-Project/FindBinar/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Spectre/Documents/GitHub/CSD-192_Capstone-Project/FindBinar/app/src/main/res/layout/fragment_notifications.xml" value="0.3532608695652174" />
+        <entry key="..\:/Users/Spectre/Documents/GitHub/CSD-192_Capstone-Project/FindBinar/app/src/main/res/layout/fragment_search.xml" value="0.3532608695652174" />
         <entry key="..\:/Users/Spectre/Documents/GitHub/CSD-192_Capstone-Project/FindBinar/app/src/main/res/layout/item_row_photo.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Spectre/Documents/GitHub/CSD-192_Capstone-Project/FindBinar/app/src/main/res/layout/item_row_topik.xml" value="0.3532608695652174" />
         <entry key="..\:/Users/Spectre/Documents/GitHub/CSD-192_Capstone-Project/FindBinar/app/src/main/res/layout/item_row_webinar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Spectre/Documents/GitHub/CSD-192_Capstone-Project/FindBinar/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
       </map>

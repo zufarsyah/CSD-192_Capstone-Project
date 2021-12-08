@@ -1,13 +1,13 @@
 package com.dicoding.picodiploma.findbinar
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dicoding.picodiploma.findbinar.databinding.ActivityMainBinding
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.dicoding.picodiploma.findbinar.Home.HomeActivity
-import com.dicoding.picodiploma.findbinar.databinding.ActivityMainBinding
+import com.dicoding.picodiploma.findbinar.home.HomeActivity
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
