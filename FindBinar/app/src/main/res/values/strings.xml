@@ -9,6 +9,39 @@
     //sign up
     <string name="signup_login_hint">Already have an account? Sign In</string>
     <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    //data test
+
+    <string name="title">Title</string>
+    <string name="university">Unversity</string>
+
+    <string-array name="data_title">
+        <item>Judul 1</item>
+        <item>Judul 2</item>
+        <item>Judul 3</item>
+        <item>Judul 4</item>
+        <item>Judul 5</item>
+    </string-array>
+
+    <string-array name="data_univ">
+        <item>Universitas Indonesia.</item>
+        <item>Universitas Brawijaya.</item>
+        <item>Universitas Gajah Mada.</item>
+        <item>Institute Teknologi Bandung.</item>
+        <item>Institute Pertanian Bogor.</item>
+    </string-array>
+
+    <integer-array name="data_photo">
+        <item>@drawable/a</item>
+        <item>@drawable/b</item>
+        <item>@drawable/c</item>
+        <item>@drawable/e</item>
+        <item>@drawable/f</item>
+    </integer-array>
 
 
 </resources>
