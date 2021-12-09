@@ -21,10 +21,11 @@ class ListWebinarAdapter(private val listWebinar: ArrayList<Webinar>) : Recycler
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (title, university, photo) = listWebinar[position]
+        val (title, date, topik, photo) = listWebinar[position]
         holder.imgPhoto.setImageResource(photo)
         holder.tvTitle.text = title
-        holder.tvUniversity.text = university
+        holder.tvDate.text = date
+        holder.tvTopik.text = topik
     }
 
     override fun getItemCount(): Int = listWebinar.size
@@ -32,7 +33,8 @@ class ListWebinarAdapter(private val listWebinar: ArrayList<Webinar>) : Recycler
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imgPhoto : ImageView = itemView.findViewById(R.id.img_item_photo)
         var tvTitle: TextView = itemView.findViewById(R.id.tv_item_title)
-        var tvUniversity : TextView = itemView.findViewById(R.id.tv_item_university)
+        var tvDate : TextView = itemView.findViewById(R.id.tv_item_date)
+        var tvTopik : TextView = itemView.findViewById(R.id.tv_item_topik)
     }
 
 }

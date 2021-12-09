@@ -18,29 +18,78 @@
 
     <string name="title">Title</string>
     <string name="university">Unversity</string>
+    <string name="nama_user">Nama User</string>
+    <string name="topik">topik</string>
+    <string name="date">Tanggal</string>
 
     <string-array name="data_title">
-        <item>Judul 1</item>
-        <item>Judul 2</item>
-        <item>Judul 3</item>
-        <item>Judul 4</item>
-        <item>Judul 5</item>
+        <item>Strategi Startup dan Industri Kreatif di Masa Pandemi COVID-19</item>
+        <item>Prospek Karir Kuliah di Bidang Teknologi Informasi</item>
+        <item>Peluang dan Tantangan Profesi Teknologi Pendidikan di Sekolah</item>
+        <item>Immersive Media Technology</item>
+        <item>Belajar Teknologi Elektropneumatik Bersama Festo </item>
+        <item>Mindful Living in Motherhood</item>
+        <item>Inspirasi Tanpa Henti</item>
+        <item>Kartini Era Society 5.0 Peluang dan Tantangan</item>
+        <item>WeliftUp Women Through Ethical Businesses</item>
+        <item>Literasi Digital Perempuan PGRI</item>
+        <item>Build Youth Creativity With Digital Business</item>
+        <item>Sesudah Pandemik Aktifitas Kreatif sebagai Upaya Meningkatkan dan Menjaga Imunitas </item>
+        <item>Semangat Ekonomi Kreatif Di Tengah Masa Pandemi</item>
+        <item>Peran Milenial Dalam Industri Kreatif Online Saat dan Pasca Pandemi Covid-19</item>
+        <item>Pengembangan Ekonomi Kreatif dan Inovatif Berbasis Kearifan Lokal</item>
+        <item>Webinar Financial Literacy</item>
+        <item>Conquer Your 20s with Financial Planning</item>
+        <item>Kelola Keuangan Demi Kemandirian Finansial</item>
+        <item>Bisnis Bertumbuh di Era Pandemi Dengan Pengelolaan Keuangan Tepat</item>
+        <item>Management Keuangan Untuk Fresh Graduate</item>
     </string-array>
 
-    <string-array name="data_univ">
-        <item>Universitas Indonesia.</item>
-        <item>Universitas Brawijaya.</item>
-        <item>Universitas Gajah Mada.</item>
-        <item>Institute Teknologi Bandung.</item>
-        <item>Institute Pertanian Bogor.</item>
+    <string-array name="data_date">
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
+        <item>Sabtu, 19 Agustus 2021</item>
     </string-array>
+
 
     <integer-array name="data_photo">
-        <item>@drawable/a</item>
-        <item>@drawable/b</item>
-        <item>@drawable/c</item>
-        <item>@drawable/e</item>
-        <item>@drawable/f</item>
+        <item>@drawable/WBT1</item>
+        <item>@drawable/WBT2</item>
+        <item>@drawable/WBT3</item>
+        <item>@drawable/WBT4</item>
+        <item>@drawable/WBT5</item>
+        <item>@drawable/WBP1</item>
+        <item>@drawable/WBP2</item>
+        <item>@drawable/WBP3</item>
+        <item>@drawable/WBP4</item>
+        <item>@drawable/WBP5</item>
+        <item>@drawable/WBI1</item>
+        <item>@drawable/WBI2</item>
+        <item>@drawable/WBI3</item>
+        <item>@drawable/WBI4</item>
+        <item>@drawable/WBI5</item>
+        <item>@drawable/WBF1</item>
+        <item>@drawable/WBF2</item>
+        <item>@drawable/WBF3</item>
+        <item>@drawable/WBF4</item>
+        <item>@drawable/WBF5</item>
     </integer-array>
 
     <string-array name="data_topik">

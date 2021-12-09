@@ -6,6 +6,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Webinar(
     var title: String,
-    var university: String,
-    var photo: Int
+    var date: String,
+    var topik: String,
+    var photo: Int,
 ) : Parcelable
