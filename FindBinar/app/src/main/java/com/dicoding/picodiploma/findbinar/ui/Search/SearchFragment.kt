@@ -77,18 +77,22 @@ class SearchFragment : Fragment() {
             val dataTopik = resources.getStringArray(R.array.data_topik)
             val listBinar = ArrayList<Webinar>()
             for (i in dataTitle.indices) {
-                var n: Int = 0
+                var n : Int = 0
 
-                if (i < 6) {
-                    n = 1
-                } else if (i in 6..10) {
-                    n = 2
-                } else if (i in 11..15) {
-                    n = 3
-                } else {
-                    n = 4
+                when {
+                    i < 5 -> {
+                        n = 0
+                    }
+                    i in 5..9 -> {
+                        n = 1
+                    }
+                    i in 10..14 -> {
+                        n = 2
+                    }
+                    i in 15..19 -> {
+                        n = 3
+                    }
                 }
-
                 val webinar = com.dicoding.picodiploma.findbinar.data.Webinar(
                     dataTitle[i],
                     dataDate[i],

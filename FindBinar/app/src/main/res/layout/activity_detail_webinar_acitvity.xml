@@ -4,52 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.notifications.NotificationsFragment">
+    tools:context=".DetailWebinarAcitvity">
 
     <ImageView
-        android:id="@+id/avatar_profile"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:id="@+id/img_webinar"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/gambar1" />
+        tools:src="@tools:sample/avatars"/>
 
     <TextView
-        android:id="@+id/tv_nama_user"
+        android:id="@+id/tv_nama_webinar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nama_user"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avatar_profile" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Riwayat"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Nama Webinar"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_nama_user" />
+        app:layout_constraintTop_toBottomOf="@+id/img_webinar" />
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/rv_profile"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="8dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deskripsi Webinar"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nama_webinar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

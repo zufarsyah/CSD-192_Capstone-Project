@@ -70,26 +70,26 @@
 
 
     <integer-array name="data_photo">
-        <item>@drawable/WBT1</item>
-        <item>@drawable/WBT2</item>
-        <item>@drawable/WBT3</item>
-        <item>@drawable/WBT4</item>
-        <item>@drawable/WBT5</item>
-        <item>@drawable/WBP1</item>
-        <item>@drawable/WBP2</item>
-        <item>@drawable/WBP3</item>
-        <item>@drawable/WBP4</item>
-        <item>@drawable/WBP5</item>
-        <item>@drawable/WBI1</item>
-        <item>@drawable/WBI2</item>
-        <item>@drawable/WBI3</item>
-        <item>@drawable/WBI4</item>
-        <item>@drawable/WBI5</item>
-        <item>@drawable/WBF1</item>
-        <item>@drawable/WBF2</item>
-        <item>@drawable/WBF3</item>
-        <item>@drawable/WBF4</item>
-        <item>@drawable/WBF5</item>
+        <item>@drawable/wbt1</item>
+        <item>@drawable/wbt2</item>
+        <item>@drawable/wbt3</item>
+        <item>@drawable/wbt4</item>
+        <item>@drawable/wbt5</item>
+        <item>@drawable/wbp1</item>
+        <item>@drawable/wbp2</item>
+        <item>@drawable/wbp3</item>
+        <item>@drawable/wbp4</item>
+        <item>@drawable/wbp5</item>
+        <item>@drawable/wbi1</item>
+        <item>@drawable/wbi2</item>
+        <item>@drawable/wbi3</item>
+        <item>@drawable/wbi4</item>
+        <item>@drawable/wbi5</item>
+        <item>@drawable/wbf1</item>
+        <item>@drawable/wbf2</item>
+        <item>@drawable/wbf3</item>
+        <item>@drawable/wbf4</item>
+        <item>@drawable/wbf5</item>
     </integer-array>
 
     <string-array name="data_topik">
@@ -97,6 +97,29 @@
         <item>Perempuan</item>
         <item>Industri Kreatif</item>
         <item>Finansial</item>
+    </string-array>
+
+    <string-array name="data_partisipan">
+        <item>50</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
+        <item>50</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
+        <item>50</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
+        <item>50</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
     </string-array>
 
     <integer-array name="icon_topik">
