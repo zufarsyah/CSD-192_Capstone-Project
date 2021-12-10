@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.findbinar.home
+package com.dicoding.picodiploma.findbinar.adapter
 
 import android.view.LayoutInflater
 import android.view.View

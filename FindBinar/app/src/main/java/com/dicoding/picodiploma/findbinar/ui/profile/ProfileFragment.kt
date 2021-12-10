@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.findbinar.ui.home
+package com.dicoding.picodiploma.findbinar.ui.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,18 +8,17 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.dicoding.picodiploma.findbinar.adapter.GridPhotoAdapter
-import com.dicoding.picodiploma.findbinar.data.Webinar
-import com.dicoding.picodiploma.findbinar.databinding.FragmentHomeBinding
 import com.dicoding.picodiploma.findbinar.R
+import com.dicoding.picodiploma.findbinar.adapter.ListWebinarAdapter
+import com.dicoding.picodiploma.findbinar.data.Webinar
+import com.dicoding.picodiploma.findbinar.databinding.FragmentProfileBinding
 
-class HomeFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
-    private var _binding: FragmentHomeBinding? = null
-    private lateinit var rvWebinar: RecyclerView
-    private lateinit var rvPhoto : RecyclerView
-    private var list = ArrayList<Webinar>()
+    private lateinit var profileViewModel: ProfileViewModel
+    private var _binding: FragmentProfileBinding? = null
+    private lateinit var rvRiwayat: RecyclerView
+    private var listFindBinar = ArrayList<Webinar>()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -30,22 +29,19 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        profileViewModel =
+            ViewModelProvider(this).get(ProfileViewModel::class.java)
+
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        rvRiwayat = binding.rvHistory
+        rvRiwayat.setHasFixedSize(true)
 
-        rvWebinar = binding.rvWebinar
-        rvWebinar.setHasFixedSize(true)
-        rvPhoto = binding.photoList
-
-        list.addAll(listWebinar)
+        listFindBinar.addAll(listWebinar)
         showRecyclerList()
-        showRecyclerGrid()
 
         return root
-
     }
 
     override fun onDestroyView() {
@@ -87,17 +83,11 @@ class HomeFragment : Fragment() {
             }
             return listBinar
         }
+
     private fun showRecyclerList() {
-        rvWebinar.layoutManager = LinearLayoutManager(activity)
-        val listWebinarAdapter = com.dicoding.picodiploma.findbinar.adapter.ListWebinarAdapter(list)
-        rvWebinar.adapter = listWebinarAdapter
-    }
-    private fun showRecyclerGrid() {
-        rvPhoto.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        val gridPhotoAdapter = GridPhotoAdapter(list)
-        rvPhoto.adapter = gridPhotoAdapter
-
-
+        rvRiwayat.layoutManager = LinearLayoutManager(activity)
+        val webinar = ListWebinarAdapter(listFindBinar)
+        rvRiwayat.adapter = webinar
     }
 
 }
