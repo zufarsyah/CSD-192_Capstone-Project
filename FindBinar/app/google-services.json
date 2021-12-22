@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "688702222321",
+    "project_id": "findbinar-9adde",
+    "storage_bucket": "findbinar-9adde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688702222321:android:3e4df711c3d8492f41de50",
+        "android_client_info": {
+          "package_name": "com.dicoding.picodiploma.findbinar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688702222321-1ted8qehv3joqtsc7s9rfgbfdl1ofsb5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfSHMkoB6AAVw1WEQlX8DyRz1IJlQX08I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688702222321-1ted8qehv3joqtsc7s9rfgbfdl1ofsb5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

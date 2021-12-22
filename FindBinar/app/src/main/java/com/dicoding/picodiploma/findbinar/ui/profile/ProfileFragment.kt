@@ -1,5 +1,6 @@
 package com.dicoding.picodiploma.findbinar.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.picodiploma.findbinar.MainActivity
 import com.dicoding.picodiploma.findbinar.R
 import com.dicoding.picodiploma.findbinar.adapter.ListWebinarAdapter
 import com.dicoding.picodiploma.findbinar.data.Webinar
 import com.dicoding.picodiploma.findbinar.databinding.FragmentProfileBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class ProfileFragment : Fragment() {
 
@@ -19,6 +22,7 @@ class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private lateinit var rvRiwayat: RecyclerView
     private var listFindBinar = ArrayList<Webinar>()
+    private lateinit var auth: FirebaseAuth
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -40,6 +44,15 @@ class ProfileFragment : Fragment() {
 
         listFindBinar.addAll(listWebinar)
         showRecyclerList()
+
+        auth = FirebaseAuth.getInstance()
+        binding.LogoutButton.setOnClickListener {
+            auth.signOut()
+            Intent(requireActivity(), MainActivity::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(it)
+            }
+        }
 
         return root
     }

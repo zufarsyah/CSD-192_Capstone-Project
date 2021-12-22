@@ -1,37 +1,33 @@
 package com.dicoding.picodiploma.findbinar
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.dicoding.picodiploma.findbinar.databinding.ActivityMainBinding
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.dicoding.picodiploma.findbinar.databinding.ActivityRegisterBinding
 import com.dicoding.picodiploma.findbinar.home.HomeActivity
-import android.content.Intent
-import android.util.Patterns
 import com.google.firebase.auth.FirebaseAuth
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
+class RegisterActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRegisterBinding
     private lateinit var auth: FirebaseAuth
-//    private var FirebaseAuth mAuth;
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.hide()
 
         auth = FirebaseAuth.getInstance()
 
-        var mEmail = findViewById<EditText>(R.id.editTextEmail)
-        var mPassword = findViewById<EditText>(R.id.editTextPassword)
-        var btnLogin = findViewById<Button>(R.id.LoginButton)
-        btnLogin.setOnClickListener {
-
+        var mEmail = findViewById<EditText>(R.id.edtEmail)
+        var mPassword = findViewById<EditText>(R.id.edtPassword)
+        var btnRegister = findViewById<Button>(R.id.RegisterButton)
+        btnRegister.setOnClickListener {
             val email = mEmail.text.toString().trim()
             val password = mPassword.text.toString().trim()
 
@@ -47,36 +43,34 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (password.isEmpty() || password.length < 6) {
+            if (password.isEmpty() || password.length < 6 ) {
                 mPassword.error = "Password must more than six character"
                 mPassword.requestFocus()
                 return@setOnClickListener
             }
 
-            loginUser(email, password)
-
+            registerUser(email, password)
         }
 
-        var btnSignUp = findViewById<Button>(R.id.btnSignUp)
-        btnSignUp.setOnClickListener {
-            val moveIntent = Intent(this@MainActivity, RegisterActivity::class.java)
+        var btnLogUp = findViewById<Button>(R.id.btnLogUp)
+        btnLogUp.setOnClickListener {
+            val moveIntent = Intent(this@RegisterActivity, MainActivity::class.java)
             startActivity(moveIntent)
-            Toast.makeText(applicationContext, "Register Activity", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Log in Activity", Toast.LENGTH_SHORT).show()
             finish()
         }
-
     }
 
-    private fun loginUser(email: String, password: String) {
-        auth.signInWithEmailAndPassword(email, password)
+    private fun registerUser(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
-                    Intent(this@MainActivity, HomeActivity::class.java).also {
+                    Intent(this@RegisterActivity, HomeActivity::class.java).also {
                         it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(it)
                     }
-                } else {
-                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                }else  {
+                    Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
                 }
             }
     }
@@ -84,7 +78,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         if (auth.currentUser != null) {
-            Intent(this@MainActivity, HomeActivity::class.java).also {
+            Intent(this@RegisterActivity, HomeActivity::class.java).also {
                 it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)
             }
