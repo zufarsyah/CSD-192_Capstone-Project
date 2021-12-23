@@ -21,6 +21,9 @@
     <string name="nama_user">Nama User</string>
     <string name="topik">topik</string>
     <string name="date">Tanggal</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="parisipan">%s Partisipan</string>
+    <string name="deskripsi_webinar">Deskripsi Webinar</string>
 
     <string-array name="data_title">
         <item>Strategi Startup dan Industri Kreatif di Masa Pandemi COVID-19</item>
@@ -128,5 +131,28 @@
         <item>@drawable/topik3</item>
         <item>@drawable/topik4</item>
     </integer-array>
+
+    <string-array name="data_deskripsi">
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
+    </string-array>
 
 </resources>

@@ -8,5 +8,7 @@ data class Webinar(
     var title: String,
     var date: String,
     var topik: String,
+    var partisipan: String,
+    var deskripsi: String,
     var photo: Int,
 ) : Parcelable

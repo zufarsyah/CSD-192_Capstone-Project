@@ -68,6 +68,8 @@ class ProfileFragment : Fragment() {
             val dataDate = resources.getStringArray(R.array.data_date)
             val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
             val dataTopik = resources.getStringArray(R.array.data_topik)
+            val dataPartisipan = resources.getStringArray(R.array.data_partisipan)
+            val dataDeskripsi = resources.getStringArray(R.array.data_deskripsi)
             val listBinar = ArrayList<Webinar>()
             for (i in dataTitle.indices) {
                 var n : Int = 0
@@ -90,6 +92,8 @@ class ProfileFragment : Fragment() {
                     dataTitle[i],
                     dataDate[i],
                     dataTopik[n],
+                    dataPartisipan[i],
+                    dataDeskripsi[i],
                     dataPhoto.getResourceId(i, -1)
                 )
                 listBinar.add(webinar)

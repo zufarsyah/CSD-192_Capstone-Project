@@ -1,11 +1,13 @@
 package com.dicoding.picodiploma.findbinar.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.picodiploma.findbinar.DetailWebinarAcitvity
 import com.dicoding.picodiploma.findbinar.adapter.ListWebinarAdapter.*
 import com.dicoding.picodiploma.findbinar.data.Webinar
 import com.dicoding.picodiploma.findbinar.R
@@ -21,11 +23,21 @@ class ListWebinarAdapter(private val listWebinar: ArrayList<Webinar>) : Recycler
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (title, date, topik, photo) = listWebinar[position]
+        val dataWebinar = listWebinar[position]
+        val (title, date, topik, _, _, photo) = listWebinar[position]
         holder.imgPhoto.setImageResource(photo)
         holder.tvTitle.text = title
         holder.tvDate.text = date
         holder.tvTopik.text = topik
+
+        val mainContext = holder.itemView.context
+
+        holder.itemView.setOnClickListener {
+            val moveDataIntent = Intent(mainContext, DetailWebinarAcitvity::class.java)
+            moveDataIntent.putExtra(DetailWebinarAcitvity.EXTRA_WEBINAR, dataWebinar)
+            mainContext.startActivity(moveDataIntent)
+        }
+
     }
 
     override fun getItemCount(): Int = listWebinar.size
