@@ -6,9 +6,10 @@ import com.dicoding.picodiploma.findbinar.databinding.ActivityMainBinding
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.dicoding.picodiploma.findbinar.home.HomeActivity
+import com.dicoding.picodiploma.findbinar.ui.home.HomeActivity
 import android.content.Intent
 import android.util.Patterns
+import com.dicoding.picodiploma.findbinar.register.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             if (password.isEmpty() || password.length < 6) {
-                mPassword.error = "Password must more than six character"
+                mPassword.error = "Password must more than 6 character"
                 mPassword.requestFocus()
                 return@setOnClickListener
             }

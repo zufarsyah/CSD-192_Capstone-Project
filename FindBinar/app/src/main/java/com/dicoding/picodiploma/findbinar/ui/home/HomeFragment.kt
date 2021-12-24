@@ -1,5 +1,6 @@
 package com.dicoding.picodiploma.findbinar.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,9 @@ import com.dicoding.picodiploma.findbinar.adapter.GridPhotoAdapter
 import com.dicoding.picodiploma.findbinar.data.Webinar
 import com.dicoding.picodiploma.findbinar.databinding.FragmentHomeBinding
 import com.dicoding.picodiploma.findbinar.R
+import com.dicoding.picodiploma.findbinar.TopikActivity
+import com.dicoding.picodiploma.findbinar.adapter.TopikAdapter
+import com.dicoding.picodiploma.findbinar.data.Topik
 
 class HomeFragment : Fragment() {
 
@@ -19,7 +23,9 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private lateinit var rvWebinar: RecyclerView
     private lateinit var rvPhoto : RecyclerView
+    private lateinit var rvTopik : RecyclerView
     private var list = ArrayList<Webinar>()
+    private var list2 = ArrayList<Topik>()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -35,14 +41,17 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
         rvWebinar = binding.rvWebinar
         rvWebinar.setHasFixedSize(true)
         rvPhoto = binding.photoList
 
+        rvTopik = binding.rvTopik
+        list2.addAll(listTopik)
+
         list.addAll(listWebinar)
         showRecyclerList()
         showRecyclerGrid()
+        showRecyclerTopik()
 
         return root
 
@@ -102,6 +111,30 @@ class HomeFragment : Fragment() {
         rvPhoto.adapter = gridPhotoAdapter
 
 
+    }
+
+    private val listTopik: ArrayList<Topik>
+        get() {
+            val dataTopik = resources.getStringArray(R.array.data_topik)
+            val dataIcon = resources.obtainTypedArray(R.array.icon_topik)
+            val list = ArrayList<Topik>()
+            for (i in dataTopik.indices) {
+                val topik = Topik(dataTopik[i], dataIcon.getResourceId(i, -1))
+                list.add(topik)
+            }
+            return list
+        }
+    private fun showRecyclerTopik() {
+        rvTopik.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        val listTopikAdapter = TopikAdapter(list2)
+        rvTopik.adapter = listTopikAdapter
+
+        listTopikAdapter.setOnItemClickCallback(object : TopikAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: Topik) {
+                val moveIntent = Intent(activity, TopikActivity::class.java)
+                startActivity(moveIntent)
+            }
+        })
     }
 
 }

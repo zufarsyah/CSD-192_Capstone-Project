@@ -18,7 +18,7 @@ class ListWebinarAdapter(private val listWebinar: ArrayList<Webinar>) : Recycler
         parent: ViewGroup,
         viewType: Int
     ): ListViewHolder {
-       val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_row_webinar, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_row_webinar, parent, false)
         return ListViewHolder(view)
     }
 

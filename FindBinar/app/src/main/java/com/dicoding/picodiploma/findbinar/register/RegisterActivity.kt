@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.findbinar
+package com.dicoding.picodiploma.findbinar.register
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,11 +7,14 @@ import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.dicoding.picodiploma.findbinar.MainActivity
+import com.dicoding.picodiploma.findbinar.R
 import com.dicoding.picodiploma.findbinar.databinding.ActivityRegisterBinding
-import com.dicoding.picodiploma.findbinar.home.HomeActivity
+import com.dicoding.picodiploma.findbinar.ui.home.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var auth: FirebaseAuth
 
@@ -48,6 +51,7 @@ class RegisterActivity : AppCompatActivity() {
                 mPassword.requestFocus()
                 return@setOnClickListener
             }
+
 
             registerUser(email, password)
         }

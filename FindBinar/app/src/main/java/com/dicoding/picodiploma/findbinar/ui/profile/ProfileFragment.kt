@@ -1,32 +1,42 @@
 package com.dicoding.picodiploma.findbinar.ui.profile
 
+import android.app.Activity.RESULT_OK
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.navigation.Navigation
 import com.dicoding.picodiploma.findbinar.MainActivity
-import com.dicoding.picodiploma.findbinar.R
-import com.dicoding.picodiploma.findbinar.adapter.ListWebinarAdapter
-import com.dicoding.picodiploma.findbinar.data.Webinar
 import com.dicoding.picodiploma.findbinar.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.storage.FirebaseStorage
+import com.squareup.picasso.Picasso
+import java.io.ByteArrayOutputStream
+import android.os.Handler
 
 class ProfileFragment : Fragment() {
 
     private lateinit var profileViewModel: ProfileViewModel
     private var _binding: FragmentProfileBinding? = null
-    private lateinit var rvRiwayat: RecyclerView
-    private var listFindBinar = ArrayList<Webinar>()
     private lateinit var auth: FirebaseAuth
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    companion object {
+        const val REQUEST_CAMERA = 100
+    }
+
+    private lateinit var imageUri : Uri
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,72 +49,128 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        rvRiwayat = binding.rvHistory
-        rvRiwayat.setHasFixedSize(true)
-
-        listFindBinar.addAll(listWebinar)
-        showRecyclerList()
-
         auth = FirebaseAuth.getInstance()
         binding.LogoutButton.setOnClickListener {
             auth.signOut()
-            Intent(requireActivity(), MainActivity::class.java).also {
+                Intent(requireActivity(), MainActivity::class.java).also {
                 it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)
+                }
             }
-        }
 
         return root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.ivImage.setOnClickListener {
+            intentCamera()
+        }
+
+        val user  = auth.currentUser
+        if(user != null) {
+            if (user.photoUrl !=  null) {
+                Picasso.get().load(user.photoUrl).into(binding.ivProfile)
+            }else {
+                Picasso.get().load("https://picsum.photos/200/300").into(binding.ivProfile)
+            }
+
+            binding.etName.setText(user.displayName)
+            binding.etEmail.setText(user.email)
+            binding.tvNamaUser.setText(user.displayName)
+        }
+
+        binding.btnUpdate.setOnClickListener {
+            val image = when {
+                ::imageUri.isInitialized -> imageUri
+                user?.photoUrl == null -> Uri.parse("https://picsum.photos/200/300")
+                else  -> user.photoUrl
+            }
+
+            val name = binding.etName.text.toString().trim()
+            if (name.isEmpty()) {
+                binding.etName.error = "This field cant be empty"
+                binding.etName.requestFocus()
+                return@setOnClickListener
+            }
+
+            showLoading(true)
+            UserProfileChangeRequest.Builder()
+                .setDisplayName(name)
+                .setPhotoUri(image)
+                .build().also {
+                    user?.updateProfile(it)?.addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            Toast.makeText(activity, "Profile Updated , Go Refresh Page", Toast.LENGTH_SHORT).show()
+                            showLoading(false)
+                        }else {
+                            Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+        }
+
+        binding.etEmail.setOnClickListener {
+            val actionUpdateEmail = ProfileFragmentDirections.actionUpdateEmail()
+            Navigation.findNavController(it).navigate(actionUpdateEmail)
+        }
+        binding.btnChangePassword.setOnClickListener {
+            val actionChangePassword = ProfileFragmentDirections.actionChangePassword()
+            Navigation.findNavController(it).navigate(actionChangePassword)
+        }
+    }
+
+
+    //camera
+    private fun intentCamera() {
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { intent ->
+            activity?.packageManager?.let {
+                intent.resolveActivity(it).also {
+                    startActivityForResult(intent, REQUEST_CAMERA )
+                }
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_CAMERA && resultCode == RESULT_OK) {
+            val imgBitmap = data?.extras?.get("data") as Bitmap
+            uploadImage(imgBitmap)
+        }
+    }
+
+    private fun uploadImage(imgBitmap: Bitmap) {
+        val baos = ByteArrayOutputStream()
+        val ref = FirebaseStorage.getInstance().reference.child( "img/${FirebaseAuth.getInstance().currentUser?.uid}")
+        showLoading(true)
+        imgBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val image = baos.toByteArray()
+        ref.putBytes(image)
+            .addOnCompleteListener{
+                if (it.isSuccessful) {
+                    ref.downloadUrl.addOnCompleteListener {
+                        it.result?.let {
+                            imageUri = it
+                            binding.ivProfile.setImageBitmap(imgBitmap)
+                            showLoading(false)
+                        }
+                    }
+                }
+            }
+    }
+    //camera
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-    private val listWebinar: ArrayList<Webinar>
-        get() {
-            val dataTitle = resources.getStringArray(R.array.data_title)
-            val dataDate = resources.getStringArray(R.array.data_date)
-            val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
-            val dataTopik = resources.getStringArray(R.array.data_topik)
-            val dataPartisipan = resources.getStringArray(R.array.data_partisipan)
-            val dataDeskripsi = resources.getStringArray(R.array.data_deskripsi)
-            val listBinar = ArrayList<Webinar>()
-            for (i in dataTitle.indices) {
-                var n : Int = 0
-
-                when {
-                    i < 5 -> {
-                        n = 0
-                    }
-                    i in 5..9 -> {
-                        n = 1
-                    }
-                    i in 10..14 -> {
-                        n = 2
-                    }
-                    i in 15..19 -> {
-                        n = 3
-                    }
-                }
-                val webinar = com.dicoding.picodiploma.findbinar.data.Webinar(
-                    dataTitle[i],
-                    dataDate[i],
-                    dataTopik[n],
-                    dataPartisipan[i],
-                    dataDeskripsi[i],
-                    dataPhoto.getResourceId(i, -1)
-                )
-                listBinar.add(webinar)
+    private fun showLoading(isLoading: Boolean) {
+            if (isLoading){
+                binding.progressBar.visibility = View.VISIBLE
+            }else{
+                binding.progressBar.visibility = View.GONE
             }
-            return listBinar
         }
-
-    private fun showRecyclerList() {
-        rvRiwayat.layoutManager = LinearLayoutManager(activity)
-        val webinar = ListWebinarAdapter(listFindBinar)
-        rvRiwayat.adapter = webinar
-    }
 
 }

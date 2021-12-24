@@ -21,9 +21,15 @@
     <string name="nama_user">Nama User</string>
     <string name="topik">topik</string>
     <string name="date">Tanggal</string>
-    <string name="tanggal">Tanggal</string>
-    <string name="parisipan">%s Partisipan</string>
+    <string name="email">Email</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="update">UPDATE PROFILE</string>
+    <string name="log_out">Log out</string>
+    <string name="name">Name</string>
+    <string name="partisipan">%s Partisipan</string>
     <string name="deskripsi_webinar">Deskripsi Webinar</string>
+    <string name="login_background">login background</string>
+    <string name="tanggal">Tanggal</string>
 
     <string-array name="data_title">
         <item>Strategi Startup dan Industri Kreatif di Masa Pandemi COVID-19</item>
@@ -154,5 +160,8 @@
         <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
         <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et commodo ornare nibh scelerisque pellentesque cras. Urna rhoncus, non tellus dis sem risus. Fusce dignissim tellus hac ac tristique enim leo duis suspendisse. Nisl vitae aliquam in risus vel ac diam blandit.</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splash_screen">Splash Screen</string>
 
 </resources>

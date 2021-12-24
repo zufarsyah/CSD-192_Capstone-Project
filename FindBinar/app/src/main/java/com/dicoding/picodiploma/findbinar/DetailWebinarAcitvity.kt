@@ -1,5 +1,7 @@
 package com.dicoding.picodiploma.findbinar
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dicoding.picodiploma.findbinar.data.Webinar
@@ -22,13 +24,23 @@ class DetailWebinarAcitvity : AppCompatActivity() {
         binding.imgWebinar.setImageResource(webinar.photo)
         binding.tvNamaWebinar.text = webinar.title
         binding.tvTanggalWebinar.text = webinar.date
-        binding.tvPartisipanWebinar.text = String.format(resources.getString(R.string.parisipan), webinar.partisipan)
+        binding.tvPartisipanWebinar.text = String.format(resources.getString(R.string.partisipan), webinar.partisipan)
         binding.tvTopikWebinar.text = webinar.topik
         binding.tvDeskripsiWebinar.text = webinar.deskripsi
 
-
-
-
+        binding.callPhone.setOnClickListener {
+            val phoneNumber = "081210841382"
+            val dialPhoneIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
+            startActivity(dialPhoneIntent)
+        }
+        binding.btnLink.setOnClickListener {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://www.qubisa.com/webinars")
+                )
+            )
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

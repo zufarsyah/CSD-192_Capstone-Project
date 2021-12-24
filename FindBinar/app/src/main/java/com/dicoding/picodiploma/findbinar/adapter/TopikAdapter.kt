@@ -21,6 +21,8 @@ class TopikAdapter(private val listTopik: ArrayList<Topik>): RecyclerView.Adapte
         val(topik, icon) = listTopik[position]
         holder.imgIcon.setImageResource(icon)
         holder.tvTopik.text = topik
+
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listTopik[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int {
@@ -31,5 +33,14 @@ class TopikAdapter(private val listTopik: ArrayList<Topik>): RecyclerView.Adapte
         var tvTopik: TextView = itemView.findViewById(R.id.topik_name)
     }
 
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Topik)
+    }
 
 }
