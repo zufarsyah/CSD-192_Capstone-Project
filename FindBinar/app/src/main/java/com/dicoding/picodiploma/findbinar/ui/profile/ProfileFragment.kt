@@ -20,7 +20,7 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 import java.io.ByteArrayOutputStream
-import android.os.Handler
+
 
 class ProfileFragment : Fragment() {
 

@@ -1,5 +1,6 @@
 package com.dicoding.picodiploma.findbinar
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.util.rangeTo
@@ -66,4 +67,5 @@ class TopikActivity : AppCompatActivity() {
         val listWebinarAdapter = com.dicoding.picodiploma.findbinar.adapter.ListWebinarAdapter(list)
         rvWebinar.adapter = listWebinarAdapter
     }
+
 }
